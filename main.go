@@ -4,19 +4,20 @@ import "fmt"
 
 const pi = 3.1415
 
-
-
-func main() {
+func main(){
 	printCircleArea(2)
 	printCircleArea(4)
 
-	//calculateCircleArea := 5
-
-	fmt.Println("Площадь круга с радиусом 5см=", calculateCircleArea(5))
+	fmt.Println("Площадь круга с радиусом 5см=",
+		calculateCircleArea(5))
 }
 
 func printCircleArea(radius int) {
-	
+	if radius <= 0 {
+		fmt.Println("Радиус круга не может быть отрицательным")
+		return
+	}
+
 	fmt.Printf("Радиус круга: %d см.\n", radius)
 	fmt.Println("Формула для расчета площади круга: A=pir2\n")
 
